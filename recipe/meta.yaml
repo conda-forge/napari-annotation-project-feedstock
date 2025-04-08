@@ -1,18 +1,18 @@
 {% set name = "napari-annotation-project" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari-annotation-project-{{ version }}.tar.gz
-  sha256: b8e1a91293d35dd8f4df02461c45a7283f54249ba97244e44b5dc1bb0c78ee10
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 247725577d3aade19442c4f958895f0a2d19709501dc903ccbc93a7ed0cfc2f2
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
